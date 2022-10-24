@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   let sum = 0
   const PHONE_LENGTH = 17 // Длина телефона с маской
-  const AFTER_CHECK_DELAY = 500 // Задержка перед показом финального экрана
+  const AFTER_CHECK_DELAY = 300 // Задержка перед показом финального экрана
 
   $phone.addEventListener('input', e => {
     if (e.target.value.length < PHONE_LENGTH) {
@@ -33,7 +33,8 @@ window.addEventListener('DOMContentLoaded', function () {
       $checkNumber.textContent = $phone.value
       await goToScreenFrom($screenHome, $screenCheck)
       await startCheckAnimation()
-			goToScreenFrom($screenCheck, $screenFinish)
+      await new Promise(resolve => setTimeout(resolve, AFTER_CHECK_DELAY))
+      goToScreenFrom($screenCheck, $screenFinish)
     }
   })
 
@@ -57,7 +58,6 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   async function startCheckAnimation() {
-    const DELAY = 10 // Скорость анимации прогресса, чем меньше - тем быстрее
     const MAX_PROGRESS = 100
 
     for (const $item of $checkItems) {
@@ -66,15 +66,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
     $finishNumber.textContent = $phone.value
     $finishMoney.textContent = sum + ' грн'
-		
-		const sleep = m => new Promise(r => setTimeout(r, m))
-		await sleep(300)
 
     async function startCheckItem($item) {
+      const DELAY = $item.dataset.duration
+      let progress = 0
+
       const $progressValue = $item.querySelector('.check__value')
       const $progressFill = $item.querySelector('.check__bar-fill')
-
-      let progress = 0
 
       // Если это категория, за которую начисляются деньги
       if ($item.classList.contains('is-checked')) {
@@ -100,7 +98,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     function animateMoneyEarn(money = 0) {
-      const MONEY_EARN_DELAY = 5 // Скорость анимации накопления денег, чем меньше - тем быстрее
+      const MONEY_EARN_DELAY = 7 // Скорость анимации накопления денег, чем меньше - тем быстрее
       let currentMoney = sum
       sum += money
 
