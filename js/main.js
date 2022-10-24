@@ -17,8 +17,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   let sum = 0
   const PHONE_LENGTH = 17 // Длина телефона с маской
-  const AFTER_CHECK_DELAY = 300 // Задержка перед показом финального экрана
-  const TRANSITION = 650 // Длительность переключения между экранами (В JS и CSS должны быть одинаковыми)
+  const AFTER_CHECK_DELAY = 1000 // Задержка перед показом финального экрана
 
   $phone.addEventListener('click', () => {
     $phone.classList.add('is-active')
@@ -54,7 +53,7 @@ window.addEventListener('DOMContentLoaded', function () {
       $from.classList.add('is-hide')
       $from.classList.remove('is-show')
 
-      setTimeout(() => {
+      $from.addEventListener('transitionend', () => {
         $from.classList.remove('is-active')
         $to.classList.add('is-active')
         setTimeout(() => {
@@ -63,7 +62,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
           resolve()
         }, 10)
-      }, TRANSITION)
+      })
     })
 
     return promise
