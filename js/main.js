@@ -18,7 +18,12 @@ window.addEventListener('DOMContentLoaded', function () {
   const PHONE_LENGTH = 17 // Длина телефона с маской
   const AFTER_CHECK_DELAY = 300 // Задержка перед показом финального экрана
 
+  $phone.addEventListener('click', () => {
+    $phone.classList.add('is-active')
+  })
+  
   $phone.addEventListener('input', e => {
+    $phone.classList.add('is-active')
     if (e.target.value.length < PHONE_LENGTH) {
       $homeBtn.classList.add('is-disabled')
     } else {

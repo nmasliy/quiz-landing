@@ -174,8 +174,12 @@ a {
     border: 1px solid $grey;
     border-radius: 10px;
 		outline: transparent;
+    color: $grey;
     &::placeholder {
-      color: $grey;
+    color: $grey;
+    }
+    &.is-active {
+      color: $main;
     }
   }
 }

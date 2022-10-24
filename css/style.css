@@ -214,6 +214,7 @@ a {
   border: 1px solid #9d9db5;
   border-radius: 10px;
   outline: transparent;
+  color: #9d9db5;
 }
 .phone-field__input::-webkit-input-placeholder {
   color: #9d9db5;
@@ -229,6 +230,9 @@ a {
 }
 .phone-field__input::placeholder {
   color: #9d9db5;
+}
+.phone-field__input.is-active {
+  color: #133261;
 }
 
 .check__number-caption {
