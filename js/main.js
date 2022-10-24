@@ -1,8 +1,8 @@
 window.addEventListener('DOMContentLoaded', function () {
-  const $screens = document.querySelectorAll('.app__screen')
   const $screenHome = document.querySelector('.home')
   const $screenCheck = document.querySelector('.check')
   const $screenFinish = document.querySelector('.finish')
+  const $screenCall = document.querySelector('.call')
 
   const $phone = document.querySelector('.phone-field__input')
   const $homeBtn = document.querySelector('.home__btn')
@@ -13,15 +13,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
   const $finishNumber = document.querySelector('.finish__number')
   const $finishMoney = document.querySelector('.finish__money')
+  const $finishBtn = document.querySelector('.finish__btn')
 
   let sum = 0
   const PHONE_LENGTH = 17 // Длина телефона с маской
   const AFTER_CHECK_DELAY = 300 // Задержка перед показом финального экрана
+  const TRANSITION = 650 // Длительность переключения между экранами (В JS и CSS должны быть одинаковыми)
 
   $phone.addEventListener('click', () => {
     $phone.classList.add('is-active')
   })
-  
+
   $phone.addEventListener('input', e => {
     $phone.classList.add('is-active')
     if (e.target.value.length < PHONE_LENGTH) {
@@ -39,15 +41,20 @@ window.addEventListener('DOMContentLoaded', function () {
       await goToScreenFrom($screenHome, $screenCheck)
       await startCheckAnimation()
       await new Promise(resolve => setTimeout(resolve, AFTER_CHECK_DELAY))
-      goToScreenFrom($screenCheck, $screenFinish)
+      await goToScreenFrom($screenCheck, $screenFinish)
     }
+  })
+
+  $finishBtn.addEventListener('click', async () => {
+    await goToScreenFrom($screenFinish, $screenCall)
   })
 
   async function goToScreenFrom($from, $to) {
     const promise = new Promise((resolve, reject) => {
       $from.classList.add('is-hide')
+      $from.classList.remove('is-show')
 
-      $from.addEventListener('transitionend', () => {
+      setTimeout(() => {
         $from.classList.remove('is-active')
         $to.classList.add('is-active')
         setTimeout(() => {
@@ -55,8 +62,8 @@ window.addEventListener('DOMContentLoaded', function () {
           $to.classList.add('is-show')
 
           resolve()
-        }, 1)
-      })
+        }, 10)
+      }, TRANSITION)
     })
 
     return promise
