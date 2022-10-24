@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Введи номер для проверки твоих бонусов</title>
+</head>
+
+<body>
+	<div class="app">
+		<div class="container">
+			<div class="app__inner">
+				<header class="header">
+					<div class="banner">
+						<div class="banner__icon">
+							<img src="img/gift.svg" width="40" height="40" alt="Подарок">
+						</div>
+						<div class="banner__text">Получи до <span>500 грн</span> <br>
+							бонусов в виде кешбека</div>
+					</div>
+				</header>
+				<div class="app__content">
+					<div class="app__screen app__screen--1 home is-active">
+						<div class="title">Введи номер для проверки <br> <span>твоих бонусов</span></div>
+						<div class="phone-field">
+							<div class="phone-field__caption">Номер телефона:</div>
+							<input type="text" class="phone-field__input" placeholder="+380">
+						</div>
+						<button class="btn home__btn is-disabled">
+							<img src="img/money.svg" width="40" height="40" alt="banknote">
+							<span>Проверить</span>
+						</button>
+					</div>
+					<div class="app__screen app__screen--2 check is-hide">
+						<div class="check__number-caption">Проверяем номер:</div>
+						<div class="check__number">+3 805 088 899 11</div>
+						<ul class="check__items">
+							<li class="check__item">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check.svg" width="20" height="20" alt="check">
+									</div>
+									<div class="check__name">Автозаправки</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+							<li class="check__item">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check.svg" width="20" height="20" alt="check">
+									</div>
+									<div class="check__name">Аптеки</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+							<li class="check__item is-checked" data-money="116">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check-green.svg" width="20" height="20" alt="checked">
+									</div>
+									<div class="check__name">Супермаркеты</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+							<li class="check__item">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check.svg" width="20" height="20" alt="check">
+									</div>
+									<div class="check__name">Книжные магазины</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+							<li class="check__item">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check.svg" width="20" height="20" alt="check">
+									</div>
+									<div class="check__name">Ювелирные магазины</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+							<li class="check__item is-checked" data-money="234">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check-green.svg" width="20" height="20" alt="check">
+									</div>
+									<div class="check__name">Техно магазины</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+							<li class="check__item">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check.svg" width="20" height="20" alt="check">
+									</div>
+									<div class="check__name">Фитнес залы</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+							<li class="check__item">
+								<div class="check__head">
+									<div class="check__icon-loading">
+										<img src="img/loading.svg" width="20" height="20" alt="loading">
+									</div>
+									<div class="check__icon">
+										<img src="img/check.svg" width="20" height="20" alt="check">
+									</div>
+									<div class="check__name">Другие магазины</div>
+									<div class="check__value">0%</div>
+								</div>
+								<div class="check__bar">
+									<div class="check__bar-fill"></div>
+								</div>
+							</li>
+						</ul>
+						<div class="btn check__btn">
+							<img src="img/money.svg" width="40" height="40" alt="banknote">
+							<span>0 грн</span>
+						</div>
+					</div>
+					<div class="app__screen app__screen--3 finish check is-hide">
+						<div class="finish__number-caption">Мобильный:</div>
+						<div class="finish__number">+3 805 088 899 11</div>
+						<div class="finish__money-caption">Накопил:</div>
+						<div class="finish__money">0 грн</div>
+						<a href="#" class="btn">
+							<img src="img/money.svg" width="40" height="40" alt="banknote">
+							<span>Забрать</span>
+						</a>
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="footer__item"><a href="#">Политика конфиденциальности</a></div>
+					<div class="footer__item"><a href="#">Договор оферта</a></div>
+					<div class="footer__item"><a href="#">Компания дисконт плюс работает с 2012 года</a></div>
+				</footer>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://unpkg.com/imask"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
