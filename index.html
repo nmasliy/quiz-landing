@@ -28,19 +28,13 @@
 				</header>
 				<div class="app__content">
 					<div class="app__screen app__screen--1 home is-active">
-						<div class="title">Введи номер для проверки <br> <span>твоих бонусов</span></div>
-						<div class="phone-field">
-							<div class="phone-field__caption">Номер телефона:</div>
-							<input type="text" class="phone-field__input" placeholder="+380" value="+380 ">
-						</div>
-						<button class="btn home__btn is-disabled">
+						<div class="title">Проверьте наличие <br> <span>ваших бонусов</span></div>
+						<button class="btn home__btn">
 							<img src="img/money.svg" width="40" height="40" alt="banknote">
 							<span>Проверить</span>
 						</button>
 					</div>
 					<div class="app__screen app__screen--2 check is-hide">
-						<div class="check__number-caption">Проверяем номер:</div>
-						<div class="check__number">+3 805 088 899 11</div>
 						<ul class="check__items">
 							<li class="check__item" data-duration="10">
 								<div class="check__head">
@@ -169,17 +163,19 @@
 						</div>
 					</div>
 					<div class="app__screen app__screen--3 finish is-hide">
-						<div class="finish__number-caption">Мобильный:</div>
-						<div class="finish__number">+3 805 088 899 11</div>
+						<div class="phone-field">
+							<div class="phone-field__caption">Введите номер телефона</div>
+							<input type="text" class="phone-field__input" placeholder="+380" value="+380 ">
+						</div>
 						<div class="finish__money-caption">Накопил:</div>
 						<div class="finish__money">0 грн</div>
-						<button class="btn finish__btn">
+						<button class="btn finish__btn is-disabled">
 							<img src="img/money.svg" width="40" height="40" alt="banknote">
 							<span>Забрать</span>
 						</button>
 					</div>
 					<div class="app__screen app__screen--4 call is-hide">
-						<div class="title">Ожидайте звонка оператора, <br> для того, чтобы получить <span>ваши&nbsp;бонусы</span></div>
+						<div class="title">Ожидайте звонка оператора, <br> для того, чтобы получить <br> <span>ваши&nbsp;бонусы</span></div>
 					</div>
 				</div>
 				<footer class="footer">

@@ -7,11 +7,9 @@ window.addEventListener('DOMContentLoaded', function () {
   const $phone = document.querySelector('.phone-field__input')
   const $homeBtn = document.querySelector('.home__btn')
 
-  const $checkNumber = document.querySelector('.check__number')
   const $checkBtn = document.querySelector('.check__btn span')
   const $checkItems = document.querySelectorAll('.check__item')
 
-  const $finishNumber = document.querySelector('.finish__number')
   const $finishMoney = document.querySelector('.finish__money')
   const $finishBtn = document.querySelector('.finish__btn')
 
@@ -26,25 +24,24 @@ window.addEventListener('DOMContentLoaded', function () {
   $phone.addEventListener('input', e => {
     $phone.classList.add('is-active')
     if (e.target.value.length < PHONE_LENGTH) {
-      $homeBtn.classList.add('is-disabled')
+      $finishBtn.classList.add('is-disabled')
     } else {
-      $homeBtn.classList.remove('is-disabled')
+      $finishBtn.classList.remove('is-disabled')
     }
   })
 
   $homeBtn.addEventListener('click', async e => {
     e.preventDefault()
-
-    if ($phone.value.length === PHONE_LENGTH) {
-      $checkNumber.textContent = $phone.value
       await goToScreenFrom($screenHome, $screenCheck)
       await startCheckAnimation()
       await new Promise(resolve => setTimeout(resolve, AFTER_CHECK_DELAY))
       await goToScreenFrom($screenCheck, $screenFinish)
-    }
   })
 
   $finishBtn.addEventListener('click', async () => {
+    if ($phone.length <= PHONE_LENGTH) {
+
+    }
     await goToScreenFrom($screenFinish, $screenCall)
   })
 
@@ -75,7 +72,6 @@ window.addEventListener('DOMContentLoaded', function () {
       await startCheckItem($item)
     }
 
-    $finishNumber.textContent = $phone.value
     $finishMoney.textContent = sum + ' грн'
 
     async function startCheckItem($item) {
